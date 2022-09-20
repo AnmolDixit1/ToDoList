@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>User Dashboard</title>
+
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+	crossorigin="anonymous"></script>
+<!-- CSS only -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+	crossorigin="anonymous">
+</head>
+<body>
+
+	<h1 class="bg-primary text-center  pt-2 pb-2 text-white">
+		Updation
+	</h1>
+	
+	
+	<!-- Navigation bar-->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ 
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active ">
+        <a class="nav-link text-white bg-secondary" href="#" th:href="@{/user/index}">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white bg-secondary" href="#" th:href="@{/user/profile}">profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white bg-secondary" href="#" th:href="@{/logout}">Logout</a>
+      </li>
+    </ul>
+    
+  </div>
+</nav>
+
+
+<p>Enter your informatin that you want to update</p>
+
+<div class="container contain">
+		<form action="" th:action="@{/user/do_updation}" method="post"
+			th:object="${user}">
+			
+			
+			
+
+			<!-- Name -->
+			<div class="form-group row  bg-white">
+				<label for="name" class="col-sm-1 col-form-label col-form-label-sm ">Name:</label>
+				<div class="col-sm-6">
+					<input name="Name" type="text" class="form-control form-control-sm"
+						id="name"  th:attr="placeholder=${user.Name}" >
+				</div>
+			</div>
+			<br>
+
+
+			<!-- Profession  -->
+			<div class="form-group row  bg-white">
+				<label for="profession"
+					class="col-sm-1 col-form-label col-form-label-sm ">Profession:</label>
+				<div class="col-sm-6">
+					<input name="Profession" type="text"
+						class="form-control form-control-sm" id="profession"  th:attr="placeholder=${user.Profession}" >
+				</div>
+			</div>
+			<br>
+
+			
+			<br>
+
+			<!-- Submit button -->
+			<div cass="text-center">
+			<button type="submit" class="btn btn-success">Submit</button>
+			</div>
+			<br>
+			
+			
+
+		</form>
+
+		
+	</div>
+	
+	
+	
+
+
+
+
+
+
+
+</body>
+</html>
